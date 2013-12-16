@@ -21,6 +21,9 @@
 
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+
+		<link rel="stylesheet" type="text/css" href="vendor/bootstrap/dist/css/bootstrap.css">
 		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
 		<script>
 			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
@@ -31,7 +34,7 @@
 		<![endif]-->
 	</head>
 
-	<body ng-app="PrezangularApp">
+	<body ng-app="PrezangularApp" ng-controller="PrezangularCtrl">
 
 		{{2+2}}
 
@@ -68,12 +71,29 @@
 
 					</section>
 
-			    <div ng-include="'template/introduction.html'"></div>
 
+					<section>
+						
+						<table class="table table-hover">
+							<thead>
+								<tr>
+									<th>toto</th>
+									<th>toto</th>
+									<th>toto</th>
+									<th>toto</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="item in items">
+									<td>{{item.name}}</td>
+									<td>{{item.age}}</td>
+									<td>{{item.fonction}}</td>
+									<td>{{item.bip}}</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
 				</section>
-
-
-
 			</div>
 
 		</div>
@@ -92,10 +112,12 @@
 			// Full list of configuration options available here:
 			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
-				controls: false,
-				progress: false,
+				controls: true,
+				progress: true,
 				history: true,
 				center: true,
+				keyboard: true,
+
 
 				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
 				transition: Reveal.getQueryHash().transition || 'zoom', // default/cube/page/concave/zoom/linear/fade/none
@@ -115,13 +137,8 @@
 			});
 
 		</script>
-
-
 	    <script src="vendor/jquery/jquery.js"></script>
 	    <script src="vendor/angular/angular.js"></script>
 	    <script src="js/angular/app.js"></script>
-
-
-
 	</body>
 </html>
