@@ -1,4 +1,4 @@
 prezangular
 ===========
 
-French modest atempt to explain angular
+(french) reveal slides for explain angular to JAVA/Server Side backgrounded people
